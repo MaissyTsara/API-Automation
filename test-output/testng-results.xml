@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-14T01:12:10 WIB" name="Annotation Execution Suite" finished-at="2025-02-14T01:12:10 WIB" duration-ms="99">
+    <groups>
+    </groups>
+    <test started-at="2025-02-14T01:12:10 WIB" name="MyTestGroup" finished-at="2025-02-14T01:12:10 WIB" duration-ms="99">
+      <class name="ParallelTestNG">
+        <test-method signature="dataTestScenario(java.lang.String,int)[pri:0, instance:ParallelTestNG@5d740a0f]" started-at="2025-02-14T01:12:10 WIB" name="dataTestScenario" data-provider="dataproviderPositive" finished-at="2025-02-14T01:12:10 WIB" duration-ms="10" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Maissy]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataTestScenario -->
+        <test-method signature="dataTestScenario(java.lang.String,int)[pri:0, instance:ParallelTestNG@5d740a0f]" started-at="2025-02-14T01:12:10 WIB" name="dataTestScenario" data-provider="dataproviderPositive" finished-at="2025-02-14T01:12:10 WIB" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Tsara]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataTestScenario -->
+        <test-method signature="dataTestScenario(java.lang.String,int)[pri:0, instance:ParallelTestNG@5d740a0f]" started-at="2025-02-14T01:12:10 WIB" name="dataTestScenario" data-provider="dataproviderPositive" finished-at="2025-02-14T01:12:10 WIB" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Permata]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataTestScenario -->
+        <test-method signature="scenarioTest1()[pri:0, instance:ParallelTestNG@5d740a0f]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest1" finished-at="2025-02-14T01:12:10 WIB" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest1 -->
+        <test-method signature="scenarioTest2()[pri:0, instance:ParallelTestNG@5d740a0f]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest2" finished-at="2025-02-14T01:12:10 WIB" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest2 -->
+        <test-method signature="scenarioTest3()[pri:0, instance:ParallelTestNG@5d740a0f]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest3" finished-at="2025-02-14T01:12:10 WIB" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest3 -->
+        <test-method signature="scenarioTest4()[pri:0, instance:ParallelTestNG@5d740a0f]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest4" finished-at="2025-02-14T01:12:10 WIB" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest4 -->
+        <test-method signature="scenarioTest5()[pri:0, instance:ParallelTestNG@5d740a0f]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest5" finished-at="2025-02-14T01:12:10 WIB" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest5 -->
+      </class> <!-- ParallelTestNG -->
+      <class name="ParallelTestNG2">
+        <test-method signature="dataTestScenario(java.lang.String,int)[pri:0, instance:ParallelTestNG2@25a65b77]" started-at="2025-02-14T01:12:10 WIB" name="dataTestScenario" data-provider="dataproviderNegative" finished-at="2025-02-14T01:12:10 WIB" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Rudy]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataTestScenario -->
+        <test-method signature="dataTestScenario(java.lang.String,int)[pri:0, instance:ParallelTestNG2@25a65b77]" started-at="2025-02-14T01:12:10 WIB" name="dataTestScenario" data-provider="dataproviderNegative" finished-at="2025-02-14T01:12:10 WIB" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sari]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[50]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataTestScenario -->
+        <test-method signature="dataTestScenario(java.lang.String,int)[pri:0, instance:ParallelTestNG2@25a65b77]" started-at="2025-02-14T01:12:10 WIB" name="dataTestScenario" data-provider="dataproviderNegative" finished-at="2025-02-14T01:12:10 WIB" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Joko]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataTestScenario -->
+        <test-method signature="scenarioTest1()[pri:0, instance:ParallelTestNG2@25a65b77]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest1" finished-at="2025-02-14T01:12:10 WIB" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest1 -->
+        <test-method signature="scenarioTest2()[pri:0, instance:ParallelTestNG2@25a65b77]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest2" finished-at="2025-02-14T01:12:10 WIB" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest2 -->
+        <test-method signature="scenarioTest3()[pri:0, instance:ParallelTestNG2@25a65b77]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest3" finished-at="2025-02-14T01:12:10 WIB" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest3 -->
+        <test-method signature="scenarioTest4()[pri:0, instance:ParallelTestNG2@25a65b77]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest4" finished-at="2025-02-14T01:12:10 WIB" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest4 -->
+        <test-method signature="scenarioTest5()[pri:0, instance:ParallelTestNG2@25a65b77]" started-at="2025-02-14T01:12:10 WIB" name="scenarioTest5" finished-at="2025-02-14T01:12:10 WIB" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest5 -->
+      </class> <!-- ParallelTestNG2 -->
+    </test> <!-- MyTestGroup -->
+  </suite> <!-- Annotation Execution Suite -->
+</testng-results>

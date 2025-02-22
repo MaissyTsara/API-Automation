@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-14T22:50:13 WIB" name="Surefire suite" finished-at="2025-02-14T22:50:13 WIB" duration-ms="32">
+  <suite started-at="2025-02-21T21:23:39 WIB" name="Surefire suite" finished-at="2025-02-21T21:23:44 WIB" duration-ms="5195">
     <groups>
     </groups>
-    <test started-at="2025-02-14T22:50:13 WIB" name="Surefire test" finished-at="2025-02-14T22:50:13 WIB" duration-ms="32">
+    <test started-at="2025-02-21T21:23:39 WIB" name="Surefire test" finished-at="2025-02-21T21:23:44 WIB" duration-ms="5195">
+      <class name="restassured.ValidationTest">
+        <test-method signature="createObject()[pri:0, instance:restassured.ValidationTest@12d4bf7e]" started-at="2025-02-21T21:23:39 WIB" name="createObject" finished-at="2025-02-21T21:23:44 WIB" duration-ms="5140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createObject -->
+      </class> <!-- restassured.ValidationTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

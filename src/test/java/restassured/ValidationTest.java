@@ -20,7 +20,10 @@ public class ValidationTest {
      */
 
 ResponseItem responseItem;
-
+    
+/**
+ * 
+ */
 @Test
 public void createObject(){
      String json = "{\n" + //
@@ -128,7 +131,7 @@ public void verifyAddedObject(){
                         .log()
                         .all()
                         .pathParam("path", "objects")
-                        .pathParam("idObject", "ff808181932badb601952ba6797d7e9c")
+                        .pathParam("idObject", "ff808181932badb601952b425ad27e1e")
                         .when()
                             .get("{path}/{idObject}");
  
@@ -197,7 +200,7 @@ public void deleteObject(){
                         .log()
                         .all()
                         .pathParam("path", "objects")
-                        .pathParam("idObject", "ff808181932badb601952ba6797d7e9c")
+                        .pathParam("idObject", "ff808181932badb601952b43d9717e21")
                         .when()
                             .delete("{path}/{idObject}");
  
@@ -246,7 +249,7 @@ public void verifyObjectAfterDeleted(){
                         .log()
                         .all()
                         .pathParam("path", "objects")
-                        .pathParam("idObject", "ff808181932badb601952ba6797d7e9c")
+                        .pathParam("idObject", "ff808181932badb601952b43d9717e21")
                         .when()
                             .get("{path}/{idObject}");
  

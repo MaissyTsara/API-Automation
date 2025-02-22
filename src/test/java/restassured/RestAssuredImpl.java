@@ -94,8 +94,8 @@ public class RestAssuredImpl {
         Response response = requestSpecification
                             .log()
                             .all()
-                            .pathParam("idObject", 7)
                             .pathParam("path", "objects")
+                            .pathParam("idObject", 7)
                         .when()
                             // .get("objects/{idObject}");
                             .get("{path}/{idObject}");
@@ -273,8 +273,8 @@ public class RestAssuredImpl {
         Response response = requestSpecification
                             .log()
                             .all()
-                            .pathParam("idProduct", 7)
                             .pathParam("path", "products")
+                            .pathParam("idProduct", 7)
                             .header("Authorization", "Bearer" + token)
                         .when()
                             .get("{path}/{idProduct}");

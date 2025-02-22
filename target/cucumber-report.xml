@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="4.149" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-02-22T12:06:26.871791200Z">
+<testcase classname="End to End simulation test" name="As a user I can add new data with some data - #1.1" time="3.212">
+<system-out><![CDATA[
+Given A list of objects are available.......................................passed
+When I add new "addItem" to list............................................passed
+Then The "addItem" is available.............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="End to End simulation test" name="As a user I can add new data with some data - #1.2" time="0.681">
+<system-out><![CDATA[
+Given A list of objects are available.......................................passed
+When I add new "addItem2" to list...........................................passed
+Then The "addItem2" is available............................................passed
+]]></system-out>
+</testcase>
+</testsuite>

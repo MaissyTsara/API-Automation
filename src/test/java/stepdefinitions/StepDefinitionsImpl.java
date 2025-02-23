@@ -10,8 +10,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import apiengine.Assertion;
 import apiengine.Endpoints;
 import static apiengine.Endpoints.idObject;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,6 +36,13 @@ public class StepDefinitionsImpl {
     RequestItem requestItem;
     Response response;
     Endpoints endpoints;
+    Assertion assertion;
+
+    @BeforeStep
+    public void setUp(){
+        endpoints = new Endpoints();
+        assertion = new Assertion();
+    }
 
     @Given("A list of objects are available")
     public void getAllObjects(){
@@ -48,7 +57,7 @@ public class StepDefinitionsImpl {
         //                     .all()
         //                     .get("objects");
 
-        endpoints = new Endpoints();
+        // endpoints = new Endpoints();
         response = endpoints.getAllObjects("objects");
 
         System.out.println(">>>>>>>>>> Hasilnya 'response' adalah " + response.asPrettyString());
@@ -132,7 +141,7 @@ public class StepDefinitionsImpl {
 
         // System.out.println("Add Object " + response.asPrettyString());
         
-        endpoints = new Endpoints();
+        // endpoints = new Endpoints();
 
         response = endpoints.addObject2("objects", json);
 
@@ -152,17 +161,20 @@ public class StepDefinitionsImpl {
 
         Assert.assertEquals(response.statusCode(), 200);
         
-        Assert.assertNotNull(responseItem.dataId);
-        Assert.assertEquals(responseItem.dataName, requestItem.addName); //actual, expected
-        Assert.assertNotNull(responseItem.dataCreatedAt);
-        Assert.assertEquals(responseItem.dataItem.dataYear, requestItem.dataItems.addYear);
-        Assert.assertEquals(responseItem.dataItem.dataPrice, requestItem.dataItems.addPrice);
-        Assert.assertEquals(responseItem.dataItem.dataCpuModel, requestItem.dataItems.addCpuModel);
-        Assert.assertEquals(responseItem.dataItem.dataHarddisk, requestItem.dataItems.addHarddisk);
+        // Assert.assertNotNull(responseItem.dataId);
+        // Assert.assertEquals(responseItem.dataName, requestItem.addName); //actual, expected
+        // Assert.assertNotNull(responseItem.dataCreatedAt);
+        // Assert.assertEquals(responseItem.dataItem.dataYear, requestItem.dataItems.addYear);
+        // Assert.assertEquals(responseItem.dataItem.dataPrice, requestItem.dataItems.addPrice);
+        // Assert.assertEquals(responseItem.dataItem.dataCpuModel, requestItem.dataItems.addCpuModel);
+        // Assert.assertEquals(responseItem.dataItem.dataHarddisk, requestItem.dataItems.addHarddisk);
     
+        assertion.assertAddObject(responseItem, requestItem);
+
         // System.out.println("Ini adalah payload : " + payload);
         // System.out.println(requestItem.addName);
         // System.out.println(requestItem.dataItems.addPrice);
+    
     }
 
     // Cara tanpa menggunakan Object Mapper
@@ -198,62 +210,6 @@ public class StepDefinitionsImpl {
         Assert.assertEquals(responseItem.dataItem.dataCpuModel, "Intel Core i5");
         Assert.assertEquals(responseItem.dataItem.dataHarddisk, "256 GB");   
     }
-
-    // @Then("The {string} is available")
-    // public void getSingleObject2(String payload) throws JsonMappingException, JsonProcessingException{
-    //     //Implementation
-
-    //     dataRequest = new DataRequest();
-
-    //     System.out.println("Get Single Object");
-    //     // RestAssured.baseURI = "https://api.restful-api.dev";
-        
-    //     // RequestSpecification requestSpecification = RestAssured
-    //     //                                              .given();
-
-    //     for(Map.Entry<String, String> entry : dataRequest.addItemCollection().entrySet()){
-    //         if (entry.getKey().equals(payload)){
-    //             json = entry.getValue();
-    //         break;
-    //         }
-    //     }
-
-    //     //Object Mapper
-    //     /*
-    //      * Convert JSON to POJO
-    //      */
-    //     ObjectMapper requestAddItem = new ObjectMapper();
-    //     requestItem = requestAddItem.readValue(json, RequestItem.class);
-
-    //     //Validation
-    //     JsonPath jsonPath = response.jsonPath();
-    //     responseItem = jsonPath.getObject("", ResponseItem.class);
-
-        
-    //     // response = requestSpecification
-    //     //                     .log()
-    //     //                     .all()
-    //     //                     .pathParam("idObject", responseItem.dataId)
-    //     //                     .pathParam("path", "objects")
-    //     //                     .when()
-    //     //                         .get("{path}/{idObject}");
-                  
-    //     endpoints = new Endpoints();
-
-    //     response = endpoints.getSingleObject2("objects", responseItem.dataId);
-
-    //     System.out.println("Single Object " + response.asPrettyString());
-
-    //     Assert.assertEquals(response.statusCode(), 200);
-        
-    //     Assert.assertNotNull(responseItem.dataId);
-    //     Assert.assertEquals(responseItem.dataName, requestItem.addName); //actual, expected
-    //     Assert.assertEquals(responseItem.dataItem.dataYear, requestItem.dataItems.addYear);
-    //     Assert.assertEquals(responseItem.dataItem.dataPrice, requestItem.dataItems.addPrice);
-    //     Assert.assertEquals(responseItem.dataItem.dataCpuModel, requestItem.dataItems.addCpuModel);
-    //     Assert.assertEquals(responseItem.dataItem.dataHarddisk, requestItem.dataItems.addHarddisk);   
-    // }
-
 
     // Cara menggunakan Object Mapper
     @Then("The {string} is available")
@@ -291,7 +247,7 @@ public class StepDefinitionsImpl {
     
 
     // Panggil endpoint hanya jika dataId tersedia
-        endpoints = new Endpoints();
+        // endpoints = new Endpoints();
         response = endpoints.getSingleObject2("objects");
         
         System.out.println("Single Object " + response.asPrettyString());
@@ -326,13 +282,22 @@ public class StepDefinitionsImpl {
 
 
         Assert.assertEquals(response.statusCode(), 200);
-        Assert.assertNotNull(responseItem.dataId);
-        Assert.assertEquals(responseItem.dataName, requestItem.addName);
-        Assert.assertEquals(responseItem.dataItem.dataYear, requestItem.dataItems.addYear);
-        Assert.assertEquals(responseItem.dataItem.dataPrice, requestItem.dataItems.addPrice);
-        Assert.assertEquals(responseItem.dataItem.dataCpuModel, requestItem.dataItems.addCpuModel);
-        Assert.assertEquals(responseItem.dataItem.dataHarddisk, requestItem.dataItems.addHarddisk);
+        // Assert.assertNotNull(responseItem.dataId);
+        // Assert.assertEquals(responseItem.dataName, requestItem.addName);
+        // Assert.assertEquals(responseItem.dataItem.dataYear, requestItem.dataItems.addYear);
+        // Assert.assertEquals(responseItem.dataItem.dataPrice, requestItem.dataItems.addPrice);
+        // Assert.assertEquals(responseItem.dataItem.dataCpuModel, requestItem.dataItems.addCpuModel);
+        // Assert.assertEquals(responseItem.dataItem.dataHarddisk, requestItem.dataItems.addHarddisk);
+
+        assertion.assertGetSingleObject(responseItem, requestItem);
 }
 
+/*
+ * Response Item > List
+ * List<ResponeItem> responseItem = jsonPath.getList("", ResponseItem.class)
+ * responseItem.size() != 0
+ * atau
+ * responseItem[13].name
+ */
 
 }

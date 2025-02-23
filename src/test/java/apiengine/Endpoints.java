@@ -1,5 +1,7 @@
 package apiengine;
 
+import com.apiautomation.constants.Constants;
+
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -9,8 +11,17 @@ public class Endpoints {
 
     RequestSpecification requestSpecification;
     Boolean boolean1;
+    // Constants constants;
 
     public static String idObject;
+
+    public Endpoints(){
+        RestAssured.baseURI = Constants.BASE_URL;
+        requestSpecification = RestAssured
+                               .given()
+                               .log()
+                               .all();
+    }
 
     public void noReturn(){
 
@@ -21,14 +32,14 @@ public class Endpoints {
     }
 
     public Response getAllObjects(String path){
-        RestAssured.baseURI = "https://api.restful-api.dev";
+        // RestAssured.baseURI = "https://api.restful-api.dev";
         
-        requestSpecification = RestAssured
-                                .given();
+        // requestSpecification = RestAssured
+        //                         .given();
 
         Response response = requestSpecification
-                            .log()
-                            .all()
+                            // .log()
+                            // .all()
                             .when()
                                 .get(path);
         return response;
@@ -36,14 +47,14 @@ public class Endpoints {
     }
 
     public Response addObject2(String path, String json){
-        RestAssured.baseURI = "https://api.restful-api.dev";
+        // RestAssured.baseURI = "https://api.restful-api.dev";
         
-        requestSpecification = RestAssured
-                               .given();
+        // requestSpecification = RestAssured
+        //                        .given();
 
         Response response = requestSpecification
-                            .log()
-                            .all()
+                            // .log()
+                            // .all()
                             .pathParam("path", "objects")
                             .body(json)
                             .contentType("application/json")
@@ -73,14 +84,14 @@ public class Endpoints {
 
     public Response getSingleObject2(String objects){
 
-        RestAssured.baseURI = "https://api.restful-api.dev";
+        // RestAssured.baseURI = "https://api.restful-api.dev";
         
-        requestSpecification = RestAssured
-                               .given();
+        // requestSpecification = RestAssured
+        //                        .given();
 
         Response response = requestSpecification
-                            .log()
-                            .all()
+                            // .log()
+                            // .all()
                             .pathParam("path", "objects")
                             .pathParam("idObject", idObject)
                             // .pathParam("idObject", idObject)

@@ -7,9 +7,9 @@ import io.restassured.specification.RequestSpecification;
 
 public class RestAssuredImpl {
     public static void main(String[] args) {
-        getAllObjects();
+        // getAllObjects();
         // getSingleObject();
-        // getObjectsById();
+        getObjectsById();
         // addObject();
         // updateObject();
         // partiallyUpdateObject();
@@ -63,14 +63,17 @@ public class RestAssuredImpl {
 
         RequestSpecification requestSpecification = RestAssured
                                                      .given();
-
+        
+        /*
+        * Karena query paramnya bentuknya gini
+          https://api.restful-api.dev/objects?id=3&id=5&id=10
+          Jadi bisa dalam bentuk satu queryparam aja y
+        */                                             
         Response response = requestSpecification
                             .log()
                             .all()
                             .pathParam("path", "objects")
-                            .queryParam("id", 3)
-                            .queryParam("id", 5)
-                            .queryParam("id", 10)
+                            .queryParam("id", 3,5,10)
                         .when()
                             .get("{path}");
 
